@@ -288,36 +288,36 @@ if(document.querySelector('.dropdown-icon')) {
 // if(langIsEng) LANG_SELECTS[0].classList.add('header-lang__select--active')
 
 // SHARE
-$$('.modal-share__button').forEach((button,index) => {
-	button.addEventListener('click', () => {
-		$$('.modal-share__button').forEach(i => i.classList.remove('modal-share__button--active'))
-		$$('.modal-share__content').forEach(i => i.classList.remove('modal-share__content--active'))
-		button.classList.add('modal-share__button--active')
-		$$('.modal-share__content')[index].classList.add('modal-share__content--active')
-		$$('.modal-share__textarea')[index].setSelectionRange(0, $$('.modal-share__textarea')[index].value.length)
-		currentShare = index
-	})
-})
+// $$('.modal-share__button').forEach((button,index) => {
+// 	button.addEventListener('click', () => {
+// 		$$('.modal-share__button').forEach(i => i.classList.remove('modal-share__button--active'))
+// 		$$('.modal-share__content').forEach(i => i.classList.remove('modal-share__content--active'))
+// 		button.classList.add('modal-share__button--active')
+// 		$$('.modal-share__content')[index].classList.add('modal-share__content--active')
+// 		$$('.modal-share__textarea')[index].setSelectionRange(0, $$('.modal-share__textarea')[index].value.length)
+// 		currentShare = index
+// 	})
+// })
 
-window.copyWidget = function (button) {
-	button.classList.add('button--copy-active')
-	navigator.clipboard.writeText($$('.modal-share__textarea')[currentShare].value)
-	setTimeout(() => {
-		button.classList.remove('button--copy-active')
-	}, 1000)
-}
+// window.copyWidget = function (button) {
+// 	button.classList.add('button--copy-active')
+// 	navigator.clipboard.writeText($$('.modal-share__textarea')[currentShare].value)
+// 	setTimeout(() => {
+// 		button.classList.remove('button--copy-active')
+// 	}, 1000)
+// }
 
-window.now = function (suffix = 0){
-	let date = new Date();
-	date.setDate(date.getDate() + suffix);
-	return ("0" + date.getHours()).slice(-2) + ':' + ("0" + date.getMinutes()).slice(-2) + ':' + ("0" + date.getSeconds()).slice(-2)
-}
+// window.now = function (suffix = 0){
+// 	let date = new Date();
+// 	date.setDate(date.getDate() + suffix);
+// 	return ("0" + date.getHours()).slice(-2) + ':' + ("0" + date.getMinutes()).slice(-2) + ':' + ("0" + date.getSeconds()).slice(-2)
+// }
 
-if(window.innerWidth < 1024){
-	$$('.calculator-content .button--primary').forEach((button) => {
-		button.addEventListener('click', () => {
-			let scrollValue = _('result-container').offsetTop;
-			window.scrollTo({ top: scrollValue, behavior: 'smooth'});
-		})
-	});
-}
+// if(window.innerWidth < 1024){
+// 	$$('.calculator-content .button--primary').forEach((button) => {
+// 		button.addEventListener('click', () => {
+// 			let scrollValue = _('result-container').offsetTop;
+// 			window.scrollTo({ top: scrollValue, behavior: 'smooth'});
+// 		})
+// 	});
+// }
